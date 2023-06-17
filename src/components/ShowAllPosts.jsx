@@ -1,7 +1,6 @@
 import React from "react";
 import { useGetPostsQuery } from "../assets/services/FakeDataAPI";
 const ShowAllPosts = () => {
-  // Only this part seems little confusing
   const { data, error, isLoading, isSuccess } = useGetPostsQuery();
   return (
     <div className="bg-light  d-flex align-items-center justify-content-center flex-column">

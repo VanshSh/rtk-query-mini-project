@@ -5,21 +5,47 @@ export const fakeDataAPI = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com/",
   }),
+  tagTypes: ["Posts"],
   endpoints: (builder) => ({
     getPosts: builder.query({
       query: () => `posts`,
+      providesTags: ["Posts"],
     }),
     getParticularPost: builder.query({
       query: (id) => `posts/${id}`,
+      providesTags: ["Posts"],
     }),
     addPost: builder.mutation({
       query: (newPost) => ({
         url: `posts`,
         method: "POST",
-        body: newPost,
+        body: JSON.stringify(newPost),
       }),
+      invalidatesTags: ["Posts"],
+    }),
+    updatePost: builder.mutation({
+      query: ({ id, ...rest }) => ({
+        url: `posts/${id}`,
+        method: "PUT",
+        body: rest,
+      }),
+
+      invalidatesTags: ["Posts"],
+    }),
+    deletePost: builder.mutation({
+      query: (id) => ({
+        url: `posts/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Posts"],
     }),
   }),
 });
 
-export const { useGetPostsQuery, useGetParticularPostQuery } = fakeDataAPI;
+export const {
+  useGetPostsQuery,
+  useGetParticularPostQuery,
+  useAddPostMutation,
+  useUpdatePostMutation,
+  useDeletePostMutation,
+} = fakeDataAPI;

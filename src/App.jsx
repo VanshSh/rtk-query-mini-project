@@ -1,3 +1,4 @@
+import AddPost from "./components/AddPost";
 import ParticularPost from "./components/ParticularPost";
 import ShowAllPosts from "./components/ShowAllPosts";
 
@@ -9,6 +10,7 @@ function App() {
       {/* Uncomment to see the commented Components */}
       {/* <ShowAllPosts /> */}
       <ParticularPost />
+      <AddPost />
     </div>
   );
 }

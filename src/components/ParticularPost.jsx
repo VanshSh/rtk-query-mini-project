@@ -14,7 +14,7 @@ const ParticularPost = () => {
   return (
     <div>
       <div className="text-center bg-info rounded p-3 w-75 mx-auto my-3">
-        <h3>Get Indiviual Post</h3>
+        <h3>Get Indiviual Post. (Add ID only from 1 - 100)</h3>
         <div class="input-group mb-3 mt-3">
           <span class="input-group-text" id="basic-addon1">
             Enter post ID
@@ -46,8 +46,7 @@ const ParticularPost = () => {
         )}
         {data && (
           <p
-            role="alert"
-            className={`alert alert-warning w-100 my-3  ${
+            className={` bg-info-subtle  rounded  p-3 w-100 my-3  ${
               postID <= 0 || postID > 100 ? "d-none" : "d-block"
             }  `}
             key={data.id}
