@@ -1,8 +1,7 @@
 ## RTK Query
 
-(https://rtk-query-mini-project.vercel.app/)[LIVE Demo App]
+[LIVE Demo app]([https://rtk-query-mini-project.vercel.app/]
 
-<!-- Explain what all I have done in this project -->
 This project is a simple example of how to use RTK Query to fetch data from an API and display it in a React application.
 
 I have used this FREE API [Placeholder API](https://jsonplaceholder.typicode.com/) to perform my CRUD operations.
